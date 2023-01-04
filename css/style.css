@@ -33,10 +33,6 @@ h2 {
     padding-top: 160px;
 }
 
-.container form .inputBox{
-    margin-top: 20px;
-}
-
 .container form .inputBox span{
     display: block;
     color:#999;
@@ -60,7 +56,9 @@ h2 {
 .container form .flexbox .inputBox{
     flex:1 1 150px;
 }
-
+.thumb_img div {
+    padding-left: 50px;
+}
 .container form .submit-btn{
     width: 100%;
     background:linear-gradient(45deg, rgb(18, 166, 43), rgba(32, 233, 62, 0.935));

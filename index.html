@@ -5,6 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-mobile.css">
+
 
 </head>
 <body>
@@ -43,7 +45,7 @@
         <div class="back">
             <div class="stripe"></div>
             <div class="box">
-                <span>cvv</span>
+                <span>cvv/cvc</span>
                 <div class="cvv-box"></div>
                 <img class="card-logo" src="image/nfc.png" alt="">
             </div>
@@ -95,17 +97,18 @@
                     <option value="2030">2030</option>
                 </select>
             </div>
-            <div class="inputBox">
-                <span>cvv</span>
+            <div class="inputBox cvv"> 
+                <span>cvv/cvc</span>
                 <input type="text" maxlength="4" class="cvv-input">
             </div>
         </div>
-        <div class="inputBox">
-            <div id="thumb_img"> W celu wybrania typu karty kliknij na nazwę
+        <div id="thumb_img"> W celu wybrania typu karty kliknij na nazwę
                 <div onclick='changeImage("image/unionpay.png");'> UNION PAY </div>
                 <div onclick='changeImage("image/visa.png");'> VISA </div>
-            </div>
-        </div>    
+                <div onclick='changeImage("image/master.png");'> MASTERCARD </div>
+
+        </div>
+           
         <input type="submit" value="przycisk niejest aktywny" class="submit-btn">
     </form>
     <script src="js/main.js"></script>
