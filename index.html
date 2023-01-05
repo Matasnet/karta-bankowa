@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style-mobile.css">
-
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js">
+    </script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js">
+    </script>
 
 </head>
 <body>
@@ -23,7 +26,7 @@
         <div class="front">
             <div class="image">
                 <img src="image/chip.png" alt="">
-                <h2> LUDOWY BANK BIALENII </h2>
+                <h2> LUDOWY BANK BIALENII</h2>
                 <img class="card-logo" src="image/unionpay.png" alt="">
             </div>
             <div class="card-number-box">################</div>
@@ -108,10 +111,51 @@
                 <div onclick='changeImage("image/master.png");'> MASTERCARD </div>
 
         </div>
-           
-        <input type="submit" value="przycisk niejest aktywny" class="submit-btn">
+        <div id="null"> </div>
+        <a type="submit" class="submit-btn">Pobierz swoją kartę - strona przednia </a>
+        <!-- <a type="submit" class="submit-btn back-side">Pobierz swoją kartę - strona tylna </a> -->
+
+
     </form>
     <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
+
+    <script type="text/javascript">
+        function autoClick(){
+          $(".submit-btn").click();
+        }
+  
+        $(document).ready(function(){
+          var front = $(".front");
+          var back = $(".back");
+
+  
+          $(".submit-btn").on('click', function(){
+  
+            html2canvas(front, {
+              onrendered: function(canvas) {
+                var imageData = canvas.toDataURL("image/jpg");
+                var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+                $(".submit-btn").attr("download", "karta.jpg").attr("href", newData);
+              }
+            });
+  
+          });
+
+            $(".back-side").on('click', function(){
+  
+            html2canvas(back, {
+              onrendered: function(canvas) {
+                var imageData = canvas.toDataURL("image/jpg");
+                var newData = imageData.replace(/^data:image\/jpg/, "data:application/octet-stream");
+                $(".back-side").attr("download", "karta.jpg").attr("href", newData);
+              }
+            });
+  
+          });
+        });
+      </script>
+
 </div>    
 </body>
 </html>

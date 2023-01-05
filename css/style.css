@@ -76,6 +76,10 @@ h2 {
     opacity: .8;
 }
 
+#null {
+    margin-top: 5px;
+    margin-bottom: 25px;
+}
 .container .card-container{
     margin-bottom: -150px;
     position: relative;
@@ -88,13 +92,14 @@ h2 {
     height: 100%;
     width: 100%;
     top: 0; left: 0;
-    background:linear-gradient(45deg, rgb(18, 166, 43), rgba(32, 233, 62, 0.935));
+    background:rgba(32, 233, 62, 0.935);
     border-radius: 5px;
     backface-visibility: hidden;
     box-shadow: 0 15px 25px rgba(0,0,0,.2);
     padding:20px;
     transform:perspective(1000px) rotateY(0deg);
     transition:transform .4s ease-out;
+
 }
 
 .container .card-container .front .image{
@@ -132,7 +137,7 @@ h2 {
     top:0; left: 0;
     height: 100%;
     width: 100%;
-    background:linear-gradient(45deg, rgb(18, 166, 43), rgba(32, 233, 62, 0.935));
+    background:rgba(32, 233, 62, 0.935);
     border-radius: 5px;
     padding: 20px 0;
     text-align: right;
